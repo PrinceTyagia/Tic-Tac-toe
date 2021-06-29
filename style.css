@@ -1,0 +1,122 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+body {
+  font-family: "Merriweather sans", sans-serif;
+  color: #4c6986;
+}
+.wrapper {
+  max-width: 1440px;
+  height: 576px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 40px;
+ 
+}
+h1 {
+  font-size: 70px;
+  font-weight: bold;
+}
+.title{
+  max-width: 500px;
+}
+.restart {
+  width: 175px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  border: 2px solid #4c6986;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 30px;
+}
+.left {
+  margin-right: 30px;
+}
+.restart:hover {
+  transition: all 0.2s ease;
+  background: #4c6986;
+  color: white;
+}
+.game {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  height: 500px;
+}
+.header {
+  display: flex;
+  color: #9a9a9a;
+  font-style: 24px;
+}
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  flex-grow: 1;
+  grid-gap: 0px;
+  padding: 10px;
+}
+.header .player-X {
+  flex: 1;
+  border-bottom: 5px solid #eee;
+  padding-bottom: 8px;
+}
+.header .player-O {
+  flex: 1;
+  border-bottom: 5px solid #eee;
+  padding-bottom: 8px;
+}
+.player-X.active {
+  color: #42bed7;
+  border-color: #42bed7;
+}
+.player-O.active {
+  color: #d7bafb;
+  border-color: #d7bafb;
+}
+.board-tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 80px;
+  background: white;
+  cursor: pointer;
+}
+.board-tile:not(:nth-child(3n)) {
+  border-right: 3px solid rgba(137, 163, 189, 0.58);
+}
+.board-tile:not(:nth-last-child(-n + 3)) {
+  border-bottom: 3px solid rgba(137, 163, 189, 0.58);
+}
+.board-tile:hover {
+  background: #eee;
+}
+.tile-x {
+  color: #42bed7;
+}
+.tile-o {
+  color: #d7bafb;
+}
+.tile-winner span {
+  color: #23ce6b;
+}
+
+@media only screen and (max-width: 1200px){
+  .wrapper{
+    flex-direction: column;
+    
+  }
+  .left{
+    margin-bottom: 50px;
+    margin-top: 340px;
+  }
+  .right{
+    padding-bottom: 50px;
+  }
+}
